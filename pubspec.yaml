@@ -1,0 +1,46 @@
+name: capital_school
+version: 1.0.0+1
+environment:
+  sdk: ">=3.2.2 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  dio: ^5.4.3+1
+  shared_preferences: ^2.2.3
+  easy_localization: ^3.0.7
+  flutter_svg: ^2.0.10+1
+  flutter_screenutil: ^5.9.1
+  lottie: ^3.1.2
+  fluttertoast: ^8.2.5
+  flutter_riverpod: ^2.5.1
+  riverpod: ^2.5.1
+  freezed: ^2.5.2
+  freezed_annotation: ^2.4.1
+  build_runner: ^2.4.10
+
+flutter_native_splash:
+  color: "#88020B"
+  image: "assets/images/splash.png"
+  android_12:
+    color: "#88020B"
+    image: "assets/images/splash.png"
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  background_color: "#88020B"
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/translations/
+    - assets/icons/
