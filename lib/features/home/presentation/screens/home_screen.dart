@@ -15,21 +15,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.h),
               child: Text("Your Beloved Children",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                  style:
+                      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500)),
             ),
             SizedBox(
               height: 92.h,
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return Container(
+                    margin: EdgeInsets.symmetric(horizontal: 4.w),
                     decoration: BoxDecoration(
                         color: AppColors.primaryColor,
                         borderRadius: BorderRadius.circular(8),
@@ -42,32 +44,38 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 202.w,
                     height: 92.h,
                     child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                        Image.asset('assets/images/logo.png',
-                            width: 113, height: 92),
-                        const SizedBox(height: 8),
+                        // Image.asset('assets/images/logo.png',
+                        //     width: 113, height: 92),
+                        // const SizedBox(height: 8),
                         Column(
+                          // mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            CircleAvatar(
-                              radius: 22,
-                              child: Image.asset('assets/images/logo.png'),
+                            Padding(
+                              padding: EdgeInsets.only(top: 8.h, bottom: 8.h),
+                              child: CircleAvatar(
+                                radius: 22,
+                                backgroundImage: NetworkImage(
+                                    "https://images.inc.com/uploaded_files/image/1024x576/getty_481292845_77896.jpg"),
+                              ),
                             ),
-                            const Padding(
-                              padding: EdgeInsets.only(top: 8, bottom: 4),
+                            Padding(
+                              padding: EdgeInsets.only(top: 8.h, bottom: 4.h),
                               child: Text(
                                 "Nada Ahmed",
                                 style: TextStyle(
                                   color: AppColors.whiteColor,
-                                  fontSize: 10,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w700,
                                 ),
                               ),
                             ),
-                            const Text(
+                            Text(
                               "Grade 5",
                               style: TextStyle(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 10,
+                                fontSize: 10.sp,
                                 color: AppColors.whiteColor,
                               ),
                             )
@@ -83,21 +91,21 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
+              padding: EdgeInsets.symmetric(vertical: 10.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("UpComing Activities",
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                  Text("Upcoming Activities",
+                      style: TextStyle(
+                          fontSize: 16.sp, fontWeight: FontWeight.w500)),
                   InkWell(
                     onTap: () {},
-                    child: const Text(
+                    child: Text(
                       "See all",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         color: AppColors.primaryColor,
-                        fontSize: 12,
+                        fontSize: 12.sp,
                       ),
                     ),
                   )
@@ -105,10 +113,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(
-              height: 92.h,
+              height: 133.h,
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return Container(
+                    margin: EdgeInsets.symmetric(horizontal: 4.w),
                     decoration: BoxDecoration(
                         color: AppColors.deepYellow,
                         borderRadius: BorderRadius.circular(8),
@@ -119,34 +128,36 @@ class _HomeScreenState extends State<HomeScreen> {
                           )
                         ]),
                     width: 133.w,
-                    height: 113.h,
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset('assets/images/logo.png',
-                                width: 133.w, height: 61.h, fit: BoxFit.cover)),
-                        const SizedBox(height: 8),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 8, bottom: 4),
-                          child: Text(
-                            "Coding Session",
-                            style: TextStyle(
-                              color: AppColors.whiteColor,
-                              fontSize: 10,
-                              fontWeight: FontWeight.w700,
-                            ),
+                    height: 133.h,
+                    child: Column(children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.network(
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy6uB3rb_w3DrIG5xvbHg9wY-G3Y_6aDZFJg&s',
+                              width: 133.w,
+                              height: 61.h,
+                              fit: BoxFit.cover)),
+                      Padding(
+                        padding: EdgeInsets.only(top: 8.h, bottom: 4.h),
+                        child: Text(
+                          "Coding Session",
+                          style: TextStyle(
+                            color: AppColors.whiteColor,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        const Text(
-                          "25 May 2024",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 6,
-                              color: Colors.white),
-                        )
-                      ],
-                    ),
+                      ),
+                      const Spacer(),
+                      Text(
+                        "25 May 2024",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 8.sp,
+                            color: Colors.white),
+                      ),
+                      SizedBox(height: 10.h),
+                    ]),
                   );
                 },
                 itemCount: 4,
